@@ -152,7 +152,6 @@ pip install -r requirements.txt
 # Start backend server
 python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 ```
-Backend runs at `http://127.0.0.1:8000` (Swagger UI at `/docs`).
 
 ### Frontend (Next.js)
 ```bash
@@ -164,4 +163,3 @@ npm install
 # Start frontend development server
 npm run dev
 ```
-Frontend runs at `http://localhost:3000`. Log in with username `admin` and password `password123`.
