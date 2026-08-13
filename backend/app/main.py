@@ -39,6 +39,15 @@ def on_startup():
 app.include_router(zones.router, prefix="/api", tags=["zones"])
 app.include_router(records.router, prefix="/api", tags=["records"])
 
+@app.get("/", tags=["root"])
+async def root():
+    return {
+        "service": "AWS Route 53 Clone API",
+        "status": "online",
+        "docs_url": "/docs",
+        "health_url": "/api/health"
+    }
+
 @app.get("/api/health", tags=["health"])
 async def health_check():
     return {"status": "healthy", "service": "route53-backend"}
