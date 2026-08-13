@@ -1,4 +1,8 @@
-export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api"
+const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api"
+export const API_BASE_URL = rawApiUrl.endsWith("/api")
+  ? rawApiUrl
+  : `${rawApiUrl.replace(/\/+$/, "")}/api`
+
 
 export function setAuthToken(token: string) {
   if (typeof window !== "undefined") {
