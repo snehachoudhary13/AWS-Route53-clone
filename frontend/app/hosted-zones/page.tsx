@@ -14,8 +14,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Plus,
-  AlertTriangle,
-  ExternalLink,
   Download,
   CheckCircle2,
   X,
